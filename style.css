@@ -61,3 +61,15 @@ body{
 #oculto-impresion:hover{
     background-color: #BF8D30;
 }
+@media screen and (max-width:640px){
+    #btnvalida{
+        width: 40%;
+        font-size: 15px;
+        padding: 5px 5px;
+        margin-top: 20px;
+        background-color: #2D4B73;
+        color: white;
+        border-radius: 5px;
+    }
+    
+}
