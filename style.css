@@ -1,0 +1,63 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #95B3BF;
+}
+#container{
+    margin-top: 10%;
+    text-align: center;
+    align-items: center;
+}
+#header{
+    text-align: center;
+    align-items: center;
+}
+#logo-inicio{
+    margin-bottom: 20px;
+    width: 15%;
+    border-radius: 110PX;
+}
+#txt_rut{
+    padding: 15px 10px;
+    font-size: 20px;
+}
+::placeholder{
+    
+    font-size: 20px;
+    text-align: left;
+}
+#btnvalida{
+    width: 12%;
+    font-size: 20px;
+    padding: 10px 10px;
+    margin-top: 25px;
+    background-color: #2D4B73;
+    color: white;
+    border-radius: 5px;
+}
+#btnvalida:hover {
+    background-color: #BF8D30;
+}
+#logo-ticket{
+    width: 20%;
+    border-radius: 110px;
+}
+.ticket{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10%;
+    text-align: center;
+    align-items: center;
+}
+#oculto-impresion{
+    font-size: 20px;
+    padding: 10px 10px;
+    margin: 15px auto;
+    border-radius: 5px;
+    background-color: #2D4B73;
+    color: white;
+}
+#oculto-impresion:hover{
+    background-color: #BF8D30;
+}
