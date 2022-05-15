@@ -1,7 +1,26 @@
 function formatCliente(cliente)
-{cliente.value=cliente.value.replace(/[.-]/g, '')
-.replace( /^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, '$1$2$3-$4')
+{
+  
+    cliente.value=cliente.value.replace(/[.-]/g, '')
+    .replace( /^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, '$1$2$3-$4')
+
+  
 }
+$(document).ready(function(){
+  
+    $("#virtual-keyboard a").on('click', function() {
+        if ($(this).attr('data') == 'DEL') {
+            board_text = $('#txt_rut').val();
+            board_text = board_text.substring(0, board_text.length-1);
+            $('#txt_rut').val(board_text);
+        } else {
+            $('#txt_rut').val($('#txt_rut').val() + $(this).attr('data'));
+        }
+        
+    });
+});
+
+
 var cupon;
 var Fn = {
   validaRut : function (rutCompleto) {
@@ -22,13 +41,16 @@ var Fn = {
  }
 }      
 function validar(){
+
   if (Fn.validaRut( $("#txt_rut").val() )){
     rut_ticket = $("#txt_rut").val();
     cupon = parseInt($("#txt_rut").val());
     aleatorio = Math.round(Math.random()*(100 -4)) + 4;
-    let HTMLString = '<div class="ticket"> <img id= "logo-ticket"src="img/logo.png" alt="Logotipo"> <h3 class="centrado">CUPÓN<br></h3> <h2 id="numero">' + parseInt(cupon/aleatorio) + '</h2> <h4 id="fecha"></h4> <h4 id="HoraActual"> </h4> <h5 class="centrado">¡GRACIAS POR VISITARNOS! <br><br>The Luxury Experience <br> ONE</h5> <button id="oculto-impresion" onclick="imprimir()">Imprimir</button></div>  ';
+    let HTMLString = '<div class="container text-center"> <img id= "logo-ticket"src="img/logo.png" alt="Logotipo"> <br> <h3>CUPÓN<br></h3> <h2 id="numero">' + parseInt(cupon/aleatorio) + '</h2> <h4 id="fecha"></h4> <h4 id="HoraActual"> </h4> <h5>¡GRACIAS POR VISITARNOS! <br><br>The Luxury Experience <br> ONE</h5></div>  ';
     const body = document.getElementById('body');
     body.innerHTML = HTMLString;
+    
+    setTimeout(showTime(), 1000);
     imprimir();
   } 
   else {
@@ -54,8 +76,6 @@ function showTime(){
 }
 setTimeout(showTime(), 1000)
 function imprimir() {
-  const boton = document.getElementById("oculto-impresion");
-  boton.style.visibility = "hidden";
   window.print();
   window.location = "index.html";
 }
