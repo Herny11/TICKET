@@ -6,44 +6,36 @@ body{
 }
 #logo-inicio{
     margin-bottom: 20px;
-    width: 25%;
+    width: 20%;
     border-radius: 150PX;
 }
 #txt_rut{
-    padding: 15px 10px;
+    padding: 15px 15px;
     font-size: 20px;
 }
 ::placeholder{
     
     font-size: 20px;
+    
     text-align: left;
 }
 #btnvalida{
-    width: 20%;
+    width: 30%;
     font-size: 20px;
-    padding: 10px 10px;
+    padding: 10px 5px;
     background-color: #2D4B73;
     color: white;
     border-radius: 5px;
+    border: #2D4B73 solid 1px;
+    margin-left: 15px;
 }
 #btnvalida:hover {
     background-color: #BF8D30;
 }
 #logo-ticket{
-    width: 20%;
-    border-radius: 110px;
-}
-
-#oculto-impresion{
-    font-size: 20px;
-    padding: 10px 10px;
-    margin: 15px auto;
-    border-radius: 5px;
-    background-color: #2D4B73;
-    color: white;
-}
-#oculto-impresion:hover{
-    background-color: #BF8D30;
+    width: 30%;
+    border-radius: 170px;
+    margin-bottom: 40px;
 }
 
 .breadcrumb {
@@ -66,18 +58,12 @@ body{
 
 }
 
-.keyboard-row {
-    text-align: center;
-    margin: 5px;
-    padding: 10PX;
-}
-
 #virtual-keyboard a {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     background: #000000;
-    padding: 12px 25px;
+    padding: 15px 30px;
     font-size: 40px;
     color:#ffffff;
     text-align: center;
@@ -89,6 +75,12 @@ body{
     text-decoration: none;
     opacity: 0.8;
 }
+#del{
+    font-size: 42px !important;
+    padding: 14px 15px !important;
+
+}
+
 @media screen and (max-width:640px){
     #btnvalida{
         width: 40%;
@@ -101,3 +93,17 @@ body{
     }
     
 }
+@media print {
+    #ticket{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+   
+    #logo-ticket{
+        width: 40%;
+        border-radius: 110px;
+    }
+}    

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="img/icono.ico">
-    <link href="impresion.css" type="text/css" media="print" />
 
     <title>CUPÓN</title>    
 </head>
@@ -17,7 +16,7 @@
     <div>
       <img id="logo-inicio" src="img/logo.png" alt="Logotipo">
       <h1>BIENVENIDO</h1>
-      <h2>Ingrese su RUT</h2><br>
+      <h2>INGRESE SU RUT</h2><br>
     </div>
   <div>
     <div id="inicio" >
@@ -25,36 +24,48 @@
         
         <div class="row">
           <div id="content" class="col-lg-12">
-            <input id="txt_rut" placeholder="11111111-1"  maxlength="10" onfocus="formatCliente(this)">
-              <div id="virtual-keyboard" class="col-lg-6">
-                  <div class="keyboard-row">
-                      <a class="number" href="#" data="1">1</a>
-                      <a class="number" href="#" data="2">2</a>
-                      <a class="number" href="#" data="3">3</a>
+
+              <input id="txt_rut" placeholder="11111111-1"  maxlength="10" onfocus="formatCliente()">
+              <button id="btnvalida" onclick="validar()">OBTENER CODIGO</button>
+            
+              <div id="virtual-keyboard">
+                <div class="container">
+                  <div class="row align-items-center mt-2">
+                    <div class="col-12">
+                        <a class="number" href="#" data="1">1</a>
+                        <a class="number" href="#" data="2">2</a>
+                        <a class="number" href="#" data="3">3</a>
+                    </div>
+                  </div>
+                  <div class="row align-items-center mt-5">
+                    <div class="col-12">
                       <a class="number" href="#" data="4">4</a>
+                      <a class="number" href="#" data="5">5</a>
+                      <a class="number" href="#" data="6">6</a> 
+                    </div>
                   </div>
-                  <div class="keyboard-row">
-                    <a class="number" href="#" data="5">5</a>
-                    <a class="number" href="#" data="6">6</a>
-                    <a class="number" href="#" data="7">7</a>
-                    <a class="number" href="#" data="8">8</a>
-                    
+                  <div class="row align-items-center mt-5">
+                    <div class="col-12">
+                        <a class="number" href="#" data="7">7</a>
+                        <a class="number" href="#" data="8">8</a>
+                        <a class="number" href="#" data="9">9</a>  
+                    </div>
                   </div>
-                  <div class="keyboard-row">
-                    <a class="number" href="#" data="9">9</a>
-                    <a class="number" href="#" data="0">0</a>
-                    <a class="number" href="#" data="K">K</a>
-                    <a class="number" href="#" data="-">-</a>
-                  </div>
-                  <div class="keyboard-row">
-                    <a href="#" data="DEL">BORRAR</a>
+                  <div class="row align-items-center mt-5">
+                    <div class="col-12">
+                        <a class="number" href="#" data="0">0</a>
+                        <a class="text" href="#" data="K">K</a>
+                        <a id="del" href="#" data="DEL">⌫</a>
+                    </div>
                   </div>
 
+                </div>
+                 
               </div>
           </div>
       </div>
 
-        <button id="btnvalida" onclick="validar()">Obtener Cupón</button>
+       
       </div>
     </div>
   </div>
@@ -64,11 +75,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
   <script src="script.js"></script>
-  </script>
-  <script>
 
-    
-    
-    </script>
 </body>
 </html>

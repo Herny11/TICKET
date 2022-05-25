@@ -1,20 +1,30 @@
-function formatCliente(cliente)
+function formatCliente()
 {
+  var cliente = document.querySelector("#txt_rut")
   
-    cliente.value=cliente.value.replace(/[.-]/g, '')
+  cliente.value=cliente.value.replace(/[.-]/g, '')
     .replace( /^(\d{1,2})(\d{3})(\d{3})(\w{1})$/, '$1$2$3-$4')
 
   
 }
+
 $(document).ready(function(){
   
     $("#virtual-keyboard a").on('click', function() {
+      board_text = $('#txt_rut').val();
+      
         if ($(this).attr('data') == 'DEL') {
-            board_text = $('#txt_rut').val();
+            // board_text = $('#txt_rut').val();
             board_text = board_text.substring(0, board_text.length-1);
             $('#txt_rut').val(board_text);
+            formatCliente();
+            
+
         } else {
-            $('#txt_rut').val($('#txt_rut').val() + $(this).attr('data'));
+            if(board_text.length <= 9){
+              $('#txt_rut').val($('#txt_rut').val() + $(this).attr('data'));
+              formatCliente();
+            }
         }
         
     });
@@ -46,7 +56,7 @@ function validar(){
     rut_ticket = $("#txt_rut").val();
     cupon = parseInt($("#txt_rut").val());
     aleatorio = Math.round(Math.random()*(100 -4)) + 4;
-    let HTMLString = '<div class="container text-center"> <img id= "logo-ticket"src="img/logo.png" alt="Logotipo"> <br> <h3>CUPÓN<br></h3> <h2 id="numero">' + parseInt(cupon/aleatorio) + '</h2> <h4 id="fecha"></h4> <h4 id="HoraActual"> </h4> <h5>¡GRACIAS POR VISITARNOS! <br><br>The Luxury Experience <br> ONE</h5></div>  ';
+    let HTMLString = '<div id="ticket" class="container text-center"> <img id= "logo-ticket"src="img/logo.png" alt="Logotipo"> <br> <h1>CODIGO<br></h1> <h1 id="numero">' + parseInt(cupon/aleatorio) + '</h1> <h2 id="fecha"></h2> <h2 id="HoraActual"> </h2> <h2>¡VALIDO SOLO POR ESTE DIA! <br><br>The Luxury Experience <br> ONE</h2></div>  ';
     const body = document.getElementById('body');
     body.innerHTML = HTMLString;
     
@@ -76,8 +86,9 @@ function showTime(){
 }
 setTimeout(showTime(), 1000)
 function imprimir() {
+  
   window.print();
-  window.location = "index.html";
+  // window.location = "index.html";
 }
 
 
